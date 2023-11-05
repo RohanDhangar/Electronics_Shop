@@ -1,5 +1,80 @@
 @extends('master')
 @section('content')
+    <style>
+        #h3 {
+            padding-bottom: 30px;
+            text-align: center;
+            font-size: 40px;
+        }
+
+        /* Product Listing Styles */
+
+        .trending-wrapper {
+            margin: 30px;
+        }
+
+        .trending-item {
+            display: inline-block;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 0 10px 20px 0;
+            text-align: center;
+            vertical-align: top;
+            width: calc(33.33% - 20px);
+        }
+
+
+        .trending-item img.trending-image {
+            height: 100px;
+        }
+
+        .trending-item h4 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .product-description {
+            font-size: 14px;
+            margin: 10px 0;
+        }
+
+        .product-price {
+            font-size: 16px;
+            font-weight: bold;
+            color: #ff9900;
+            margin: 10px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #ff9900;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #ff6600;
+        }
+
+        /* Responsive Grid Layout */
+        @media screen and (max-width: 768px) {
+            .trending-item {
+                flex: 0 1 calc(50% - 20px);
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            .trending-item {
+                flex: 0 1 100%;
+                margin-right: 0;
+            }
+        }
+    </style>
     <div class="custom-product">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
@@ -12,7 +87,7 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
                 @foreach ($products as $item)
-                    <div class="item {{ $item['id'] == 1 ? 'active' : '' }}">
+                    <div class="item {{ $item['id'] == 5 ? 'active' : '' }}">
                         <a href="detail/{{ $item['id'] }}">
                             <img class="slider-img" src="{{ $item['gallery'] }}">
                             <div class="carousel-caption slider-text">
@@ -35,18 +110,19 @@
             </a>
         </div>
         <div class="trending-wrapper">
-            <h3>Tredning Products</h3>
+            <h3 id="h3">Trending Products</h3>
             @foreach ($products as $item)
-                <div class="trening-item">
-                    <a href="detail/{{ $item['id'] }}">
-                        <img class="trending-image" src="{{ $item['gallery'] }}">
-                        <div class="">
-                            <h3>{{ $item['name'] }}</h3>
-                        </div>
-                    </a>
+                <div class="trending-item">
+
+                    <img class="trending-image" src="{{ $item['gallery'] }}">
+                    <div class="">
+                        <h4>{{ $item['name'] }}</h4>
+                        <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p class="product-price">${{ $item['price'] }}</p>
+                    </div>
+                    <a href="detail/{{ $item['id'] }}" class="btn">View Details</a>
                 </div>
             @endforeach
         </div>
-    </div>
     </div>
 @endsection
