@@ -1,5 +1,10 @@
 @extends('master')
 @section("content")
+<style>
+  .trending-image{
+    height: 100px;
+  }
+</style>
 <div class="custom-product">
      <div class="col-sm-10">
         <div class="trending-wrapper">

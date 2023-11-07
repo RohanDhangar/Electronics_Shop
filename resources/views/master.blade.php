@@ -42,7 +42,11 @@
     .slider-text {
         background-color: #987540b8 !important;
     }
-    
+
+    .trending-item img .trending-image {
+        height: 100px;
+    }
+
     .detail-img {
         height: 200px;
     }
@@ -56,7 +60,6 @@
         margin-bottom: 20px;
         padding-bottom: 20px
     }
-    
 </style>
 
 </html>

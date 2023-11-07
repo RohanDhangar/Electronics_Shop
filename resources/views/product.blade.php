@@ -59,7 +59,7 @@
 
         .btn:hover {
             background-color: #ff6600;
-        }
+        }   
 
         /* Responsive Grid Layout */
         @media screen and (max-width: 768px) {
@@ -87,7 +87,7 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
                 @foreach ($products as $item)
-                    <div class="item {{ $item['id'] == 5 ? 'active' : '' }}">
+                    <div class="item {{ $item['id'] == 1 ? 'active' : '' }}">
                         <a href="detail/{{ $item['id'] }}">
                             <img class="slider-img" src="{{ $item['gallery'] }}">
                             <div class="carousel-caption slider-text">

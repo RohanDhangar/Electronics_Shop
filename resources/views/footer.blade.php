@@ -17,14 +17,12 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            /* Adjust the spacing as needed */
         }
 
         .footer-section {
             flex: 1;
             padding: 20px;
             max-width: 300px;
-            /* Adjust the maximum width as needed */
         }
 
         .footer-section h3 {
